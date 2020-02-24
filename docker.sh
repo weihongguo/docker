@@ -38,8 +38,8 @@ if [ $1 = 'init' ]; then
       rm -f ./docker/docker-container.sh
     else 
       mkdir docker
-      cp ${dockerpath}/docker-config.sh ./docker/
-      cp ${dockerpath}/Dockerfile ./docker/
+      cp ${dockerpath}/docker-config-demo.sh ./docker/docker-config.sh
+      cp ${dockerpath}/Dockerfile-demo ./docker/Dockerfile
     fi
 
     ln -s ${dockerpath}/docker-image.sh ./docker/
