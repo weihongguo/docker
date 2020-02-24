@@ -45,47 +45,47 @@ if [ $1 = 'init' ]; then
     ln -s ${dockerpath}/docker-image.sh ./docker/
     ln -s ${dockerpath}/docker-container.sh ./docker/
   done
-elif [ $1 = 'build']; then
-  for project in ${projects[$]}
+elif [ $1 = 'build' ]; then
+  for project in ${projects[@]}
   do
-    cd ${projectpath}/${project}
+    cd ${projectpath}/${project}/docker
     echo ${PWD}
-    ./docker/docker-image.sh build
+    ./docker-image.sh build
   done
-elif [ $1 = 'rmi']; then
-  for project in ${projects[$]}
+elif [ $1 = 'rmi' ]; then
+  for project in ${projects[@]}
   do
-    cd ${projectpath}/${project}
+    cd ${projectpath}/${project}/docker
     echo ${PWD}
-    ./docker/docker-image.sh rmi 
+    ./docker-image.sh rmi 
   done
-elif [ $1 = 'run']; then
-  for project in ${projects[$]}
+elif [ $1 = 'run' ]; then
+  for project in ${projects[@]}
   do
-    cd ${projectpath}/${project}
+    cd ${projectpath}/${project}/docker
     echo ${PWD}
-    ./docker/docker-container.sh run 
+    ./docker-container.sh run 
   done
-elif [ $1 = 'start']; then
-  for project in ${projects[$]}
+elif [ $1 = 'start' ]; then
+  for project in ${projects[@]}
   do
-    cd ${projectpath}/${project}
+    cd ${projectpath}/${project}/docker
     echo ${PWD}
-    ./docker/docker-container.sh start
+    ./docker-container.sh start
   done
-elif [ $1 = 'stop']; then
-  for project in ${projects[$]}
+elif [ $1 = 'stop' ]; then
+  for project in ${projects[@]}
   do
-    cd ${projectpath}/${project}
+    cd ${projectpath}/${project}/docker
     echo ${PWD}
-    ./docker/docker-container.sh stop 
+    ./docker-container.sh stop 
   done
-elif [ $1 = 'rm']; then
-  for project in ${projects[$]}
+elif [ $1 = 'rm' ]; then
+  for project in ${projects[@]}
   do
-    cd ${projectpath}/${project}
+    cd ${projectpath}/${project}/docker
     echo ${PWD}
-    ./docker/docker-container.sh rm 
+    ./docker-container.sh rm 
   done
 else
   Usage
