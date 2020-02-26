@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
+source ./docker-config.sh
+
 Usage() {
   cat <<EOF
 Usage:
-  build   build
-  rmi     rmi
+  build   "sudo docker build -t ${image}"
+  rmi     "sudo docker rmi ${image}"
 EOF
   exit 1
 }
@@ -14,8 +16,6 @@ EOF
 [ $1 = 'help' ] && Usage
 
 echo ${PWD}
-
-source ./docker-config.sh
 
 if [ $1 = 'build' ]; then
   sudo docker build -t ${image}
