@@ -18,7 +18,8 @@ EOF
 echo ${PWD}
 
 if [ $1 = 'build' ]; then
-  sudo docker build -t ${image}
+  echo "sudo docker build -t ${image}"
+  sudo docker build -t ${image} .
 elif [ $1 = 'rmi' ]; then
   sudo docker rmi ${image}
 else
